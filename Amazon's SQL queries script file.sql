@@ -28,19 +28,13 @@ WHERE
     product_name LIKE '%Cable%';
 
 
-#Q4. Display the average of all the price differences between the actual prices and discounted prices across all products.
-#across all products indicate that the calculations are applied to the all products in the dataset not 
-#individual products.
-#Since AVG() is an aggregate function, it operates on multiple values.
+#Q4. Display the average of all the differences between actual and discounted prices across all products.
+
 
 SELECT 
     AVG(actual_price - discounted_price) AS avg_price_difference
 FROM
     mytable;
-
-
-
-
 
 
 
@@ -66,7 +60,8 @@ WHERE
     discount_percentage BETWEEN 0.20 AND 0.40;
 
 
-#Q7. Find products that have an actual price above ₹1,000 and are rated 4 stars or above.
+
+#Q7. Find products with an actual price above ₹1,000 and rated 4 stars or above.
 
 SELECT 
     product_id, product_name, actual_price, rating
@@ -89,7 +84,7 @@ WHERE
 
 
 
-#Q9. Display review contents that contains words like worst, waste, poor, or not good.
+#Q9. Display review contents that contain words like worst, waste, poor, or not good.
 
 SELECT 
     product_id, product_name, review_id, review_content
